@@ -17,8 +17,6 @@ body {
     margin-top: 8vh;
     font-family: 'Montserrat', sans-serif;
     background: url(../img/Background.jpg);
-/*    position:relative;
-    min-height: 100vh;*/
 }
 
 button {
@@ -37,12 +35,16 @@ header {
     background: #222831;
     border-bottom: 2px solid #393e46;
     align-items:center;
-    height: 8vh;
+    height: 7vh;
     justify-content: space-around;
 }
 
 .nav-links {
     display:flex;
+}
+
+.nav-link:hover {
+    color: #00adb5;
 }
 
 .logo-container {
@@ -273,7 +275,7 @@ footer {
 
 .btn-learn {
     border-radius: 35px;
-    border: 2px solid #eeeeee;
+    border: 1px solid #eeeeee;
     background: transparent;
     padding:15px;
     margin-right: 30px;
@@ -292,14 +294,14 @@ footer {
 
 .btn-learn:hover {
     background: #393e46;
-    border: 2px solid #eeeeee;
+    border: 1px solid #eeeeee;
 
 }
 
 
 .btn-rent {
     border-radius: 35px;
-    border: 2px solid #393e46;
+    border: 1px solid #393e46;
     background: #00adb5;
     padding:15px;
     text-decoration:none;
@@ -314,7 +316,7 @@ footer {
 .btn-rent:hover 
 {
     background: #393e46;
-    border: 2px solid #eeeeee;
+    border: 1px solid #eeeeee;
 }
 
 .cover {
@@ -332,28 +334,47 @@ footer {
     
         /*ABOUT MAIN-CONTENT*/
 
-
+section.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .about .about-presentation {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 90%;
+    padding: 10px 35px;
+    width: 50%;
     align-items: center;
-    background: #393e46;
+    background: #222831;
+    border: 1px solid #00adb5;
     min-height: 80vh;
-    margin-top: 16vh;
+    margin-top: 8vh;
     margin-bottom: 4vh;
 }
+
 .about .about-title {
     margin-top:20px;
     font-size:28px;
 }
 .about .about-content p{
-    text-align: justify;
-    text-indent: 5%;
-    margin: 15px 30px;
+    margin-bottom: 1.3rem;
 }
 
+.about .car-model {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.car-model img {
+    height: 100%;
+    width: 100%;
+    animation: drop 1s ease-in-out;
+}
         /*END ABOUT MAIN-CONTENT*/
 
         /*LISTING MAIN-CONTENT*/
@@ -393,16 +414,11 @@ footer {
 
 .filter-button .btn 
 {
-    font-weight:500;
-    min-width: 120px;
-    height: 30px;
-    margin: 7px 5px;
-    background: #00adb5;
-    border:none;
-    outline: none;
-    text-transform:uppercase;
-    cursor: pointer;
     transition: all 0.3s ease;
+    padding: 10px;
+    background: #00adb5;
+    text-decoration: none;
+    margin: 2px;
 }
 
 .filter-button .btn.active {
@@ -427,8 +443,7 @@ footer {
     background: #222831;
     margin: 15px;
     width: 200px;
-    height: 300px;
-    outline: 1px solid #eeeeee;
+    outline: 1px solid #00adb5;
 }
 
 .car-list ul {
@@ -441,7 +456,6 @@ footer {
 
 .car-container .img-container {
     height: 150px;
-    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -457,7 +471,7 @@ footer {
     margin-left:15px;
 }
 
-.car-specs i, p 
+.car-specs i, .car-specs p 
 {
     margin-top:5px;
 }
@@ -465,7 +479,7 @@ footer {
 .car-container .view-button 
 {
     width: 90%;
-    margin: 35px auto  0;
+    margin: 35px auto;
 }
 
 .view-button .btn-view 
@@ -481,7 +495,62 @@ footer {
     border: 1px solid #eeeeee;
 }
 
+/* LIST NAVIGATION  */
+.navigation-page
+{
+    display:flex;
+    justify-content: center;
+    animation: smoothLoad 1.2s ease;
+    margin-bottom:25px;
+}
+.navigation-number {
+    justify-content: center;
+    display: flex;
+    width: 15%;
+}
+.navigation-number a {
+    text-decoration: none;
+    background: #222831;
+    padding: 12px;
+    border: 1px solid #00adb5;
+    margin: 0 10px;
+}
+
+.navigation-number a:hover 
+{
+    background: #393e46;
+    border: 1px solid #eeeeee;
+}
+
+
+
     /* Car product */
+.pac-icon {
+display: none;
+}
+.pac-item {
+white-space:pre-line;
+padding: 10px;
+font-size: 14px;
+cursor: pointer;
+background-color: #222831;
+}
+.pac-item-query {
+    font-size: 12px;
+    color:#eeeeee;
+}
+.pac-item:hover {
+background-color: #00adb5;
+}
+
+.pac-container:after {
+    background-image: none !important;
+    height: 0px;
+    padding: 0;
+    margin: 0;
+}
+/*Google API END*/
+
 .main-container {
     width: 90%;
     margin: 0 auto;
@@ -498,7 +567,7 @@ footer {
 
 .left-container .car-model
 {
-    border: 1px solid #eeeeee;
+    border: 1px solid #00adb5;
     background: #393e46;
     height: 55px;
     margin-bottom: 20px;
@@ -512,9 +581,9 @@ footer {
 }
 
 .left-container .car-slideshow{
-    height:60vh;
+    height:65vh;
     background: #393e46;
-    border: 1px solid #eeeeee;
+    border: 1px solid #00adb5;
     margin-bottom: 20px;
     /* XCC - To center slider container*/
     display:flex;
@@ -531,7 +600,6 @@ footer {
 
 .car-slideshow .slider img {
     width: 100%;
-    height: 100%;
     padding: 1% 10%;
     margin: auto 0;
 }
@@ -550,21 +618,25 @@ footer {
     float: right;
 } 
 
-
 .car-info
 {
+    padding: 25px;
     min-height: 25vh;
     background: #393e46;
-    border: 1px solid #eeeeee;
+    border: 1px solid #00adb5;
+}
+.car-info h3 {
+    border-bottom: 2px solid #00adb5;
 }
 
 .right-container {
     min-height: 90vh;
     min-width: 25vw;
+    max-width: 25vw;
 }
 
 .right-container .price {
-    border: 1px solid #eeeeee;
+    border: 1px solid #00adb5;
     background: #222831;
     text-align: center;
     display: flex;
@@ -574,61 +646,509 @@ footer {
     margin-bottom: 50px;
 }
 
-.right-container .form {
-    border: 1px solid #eeeeee;
+.right-container .form-group {
+    border: 1px solid #00adb5;
     background: #222831;
-    text-align: center;
+    padding-left: 15px;
 }
 
 .form p{
     font-weight: 600;
     letter-spacing: 1px;
+    margin: 5px 0;
 }
 
-.pickup-date, .drop-date{
+.pickup-date, .drop-date, .timepick{
     color: #eeeeee;
     background-color: #393e46;
-    border: 1px solid #ffffff;
-    width: 200px;
+    border: 1px solid #00adb5;
+    width: 100px;
     height: 25px;
-    margin: 10px 0;
     outline: none;
     text-align: center;
+    cursor: pointer;
 }
 
-.form textarea{
+input#search_input{
     color: #eeeeee;
     background-color: #393e46; 
-    border: 1px solid #ffffff;
-    width: 200px;
-    height: 50px;
-    margin: 10px 0;
+    border: 1px solid #00adb5;
+    width: 250px;
+    height: 35px;
     outline: none;
     resize: none;
+    padding: 0 4px;
+}
+input#search_input2{
+    color: #eeeeee;
+    background-color: #393e46; 
+    border: 1px solid #00adb5;
+    width: 250px;
+    height: 35px;
+    outline: none;
+    resize: none;
+    padding: 0 4px;
 }
 
+input.book-btn:disabled{
+    background: #393e46;
+    cursor: default;
+}
 
 .book-btn {
-    border: 1px solid #eeeeee;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #222831;
     background: #00adb5;
     width: 200px;
     height: 40px;
     color: #eeeeee;
     outline: none;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin: 10px 0;
     transition: all 0.5s ease;
 }
 
 .book-btn:hover {
     background: #222831;
-    border: 1px solid #eeeeee;
+    border: 1px solid #00adb5;
 }
 
 .right-container .price p {
     font-weight: 600;
     letter-spacing: 1px;
 }
+
+.chkBox {
+    margin-top: 5px;
+}
+
+.drop-loc-container {
+    display:flex;
+    flex-direction: column;
+    transition: all 0.5 ease;
+}
+
+.insurance
+{
+    margin-top: 25px;
+    background: #222831;
+    border: 1px solid #00adb5;
+}
+
+.insurance-info
+{
+    padding: 15px;
+    font-size: 14px;
+}
+
+.insurance-info h3 {
+    border-bottom: 1px solid #00adb5;
+    margin-bottom: 5px;
+}
+
+.insurance-info i
+{
+    color: #00adb5;
+}
+
+.form-group label
+{
+    font-size:14px;
+}
+/* .chkBox input:checked + div{
+    display: none !important;
+} */
+
+
+
+    /*After clicking Book now in product.php*/
+.book-main-container {
+    min-height: 92vh;
+    width: 90%;
+    margin: 8vh auto 0;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    background: #393e46;
+    border: 1px solid #00adb5;
+    padding: 5px 10px;
+}
+
+.details-container h3 {
+    border-bottom: 2px solid #00adb5;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+
+}
+.details-container p {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+.details-container .inputs {
+    width:95%;
+    height: 30px;
+    padding: 0 12px;
+    outline: none;
+    background: #222831;
+    border: 1px solid #00adb5;
+}
+
+.details-container .age{
+    width: 15%;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.name-container {
+    display: flex;
+    margin: 25px;
+}
+
+.name-container .first-name, .name-container .last-name {
+    width:50%;
+}
+
+.age-container {
+    display: flex;    
+    align-items: center;
+    padding-left: 25px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px 25px;
+}
+
+.contact-container .inputs {
+    width: 270px;
+}
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0 0 25px;
+}
+
+.email-container .inputs {
+    width: 65%;
+}
+
+.details-container .submit-btn {
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0;
+    width: 120px;
+    height: 40px;
+    background: #00adb5;
+    outline: none;
+    border: 1px solid #eeeeee;
+    cursor: pointer;
+}
+
+.details-container .submit-btn:hover {
+    background: #222831;
+    border: 1px solid #00adb5;
+}
+
+.credit-container h3 {
+    justify-content: space-between;
+    display: flex;
+    padding-right: 15px;
+}
+
+.credit-container .fab {
+    letter-spacing: 3px;
+    font-size: 30px;
+    display: none;
+}
+
+.submit-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submit-container h4 {
+    display: none;
+    color: red;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+
+.book-details {
+    background: #393e46;
+    border: 1px solid #00adb5;
+
+}
+
+.book-details-container {
+    flex-direction: column;
+    align-items: center;
+    DISPLAY: FLEX;
+    width: 30vw;
+}
+
+.book-details-container table{
+    width: 90%;
+    table-layout: fixed;
+    overflow-wrap: break-word;
+}
+
+.book-date {
+    text-align: -webkit-center;
+    text-align-last: left;
+}
+
+.book-details-container{
+    margin: 10px;
+}
+
+.book-details-container .car-img {
+    height: 35vh;
+    width:300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-img img {
+    width:100%;
+}
+
+
+
+
+
+                                /* SUBMIT BOOK PHP */
+.submitted-details {
+    width: 90%;
+    min-height: 80vh;
+    margin: 16vh auto 8vh;
+    font-size: 25px;
+}
+
+.homepage-btn {
+    text-decoration: none;
+    background: #222831;
+    margin: 20px;
+    border: 1px solid #00adb5;
+    font-size: 13px;
+    padding: 10px;
+}
+.homepage-btn:hover {
+    background: #00adb5;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.submitted-info {
+    background: #393e46;
+    min-height: 50vh;
+    padding: 42px 45px;
+    width:55%;
+    border: 1px solid #00adb5;
+}
+
+.container {
+    display: flex;
+    color:#222831
+}
+
+.submitted-info p{
+    margin-top: 10px;
+    margin-bottom: 45px;
+    text-indent: 5vh;
+}
+
+.container-img {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.thumbnail {
+    background: #222831;
+    border-left: none;
+    border: 1px solid #00adb5;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+
+/* MANAGE PHP  */
+.manager-container {
+    min-height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.manager-container .search-form {
+    min-height: 20vh;
+    background: #393e46;
+    border: 1px solid #00adb5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 20vh 0 40px;
+}
+
+.search-container {
+    background: #393e46;
+    border: 1px solid #00adb5;
+    min-height: 60vh;
+    margin-bottom: 20vh;
+    padding: 0 2%;
+    display: flex;
+    align-items: center;
+}
+
+.ref-container {
+    margin: 50px;
+}
+
+.ref-container .inputs{
+    background: #222831;
+    outline: none;
+    border: 1px solid #00adb5;
+    height: 40px;
+    width: 220px;
+    text-align: center;
+}
+.e-mail-container .inputs{
+    background: #222831;
+    outline: none;
+    border: 1px solid #00adb5;
+    height: 40px;
+    width: 220px;
+    text-align: center;
+}
+
+.e-mail-container {
+    margin: 50px;
+}
+
+.manager-container button.submit-btn {
+    background: #222831;
+    outline: none;
+    border: 1px solid #00adb5;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    margin: 50px;
+}
+.manager-container button.submit-btn:hover {
+    background: #00adb5;
+    border: 1px solid #eeeeee;
+    transition: all 0.5s ease;
+}
+
+.booking-details {
+    width: 50%;
+    height: 100%;
+}
+
+.booking-details table{
+    table-layout: fixed;
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+form.cancel-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.cancel-btn {
+    background: #222831;
+    outline: none;
+    border: 1px solid #00adb5;
+    height: 45px;
+    width: 130px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.cancel-btn:hover {
+    background: #00adb5;
+    border: 1px solid #eeeeee;
+}
+.car-img-container {
+    width: 50%;
+}
+.car-img-container img{
+        width: 100%;
+        height: 100%;
+}
+
+/* FAQ PHP */
+.faq-container{
+    min-height: 100vh;
+    background-color: #393e46;
+    border: 1px solid #00adb5;
+    width: 70%;
+    margin: 15vh auto 8vh;
+    padding: 30px;
+}
+
+.faq-container h1{
+    border-bottom: 1px solid #00adb5;
+    margin-bottom: 20px;
+}
+
+.question-answer {
+    margin-bottom: 20px;
+}
+
+
+            /*DATE TIME PICKER*/
+.ui-datepicker table
+{
+    background: #222831 !important;
+}
+span.ui-datepicker-month
+{
+    color: #222831;
+}
+span.ui-datepicker-year{
+    color: #222831 !important;
+}
+            /* TIME PICKER */
+.ui-timepicker-viewport{
+    background: #222831 !important;    
+}
+.ui-timepicker-standard a{
+    color: #eeeeee !important;
+}
+
+.ui-timepicker-standard .ui-state-hover{
+    color:#222831 !important;
+}
+.ui-timepicker-standard {
+    background: none !important;
+    border: none !important;
+}
+.ui-widget-content
+{
+    background: none !important;
+}
+
 
 
 
@@ -686,11 +1206,19 @@ footer {
     /*END ANIMATION*/
 
     /* RESPONSIVE WEBPAGE*/
-/* @media screen and (max-width: 670px){
-    .car-slideshow .slider{
-        width: 90%;
+@media screen and (max-width: 670px){
+    .navigation-page{
+    margin-bottom: 20px;
+
     }
-}*/
+    .navigation-number {
+    width:25%;
+    }
+    .car-list ul {
+    justify-content: center;
+    }
+
+}
 
 
 
@@ -699,8 +1227,40 @@ footer {
         z-index: 100;
     }    
 }
+/*For Mobile user*/
+@media screen and (max-width: 450px) {
+        /*INDEX PHP*/
+    .introduction .btn {
+    margin-right: 0;
+    }
+    .cover img {
+        
+    height: 50%;
+    }
+
+}
 
 @media screen and (max-width: 860px) {
+    
+    /* ABOUT MODEL */
+
+    section.about {
+        flex-direction: column-reverse;
+    }
+
+    .about .about-presentation
+    {
+        width: 90%;
+    }
+    
+    .about .car-model
+    {
+        width: 90%;
+        margin-right: 0;
+    }
+
+
+                        /*PRODUCT PHP*/
     .main-container {
             flex-direction: column;
         }    
@@ -708,6 +1268,74 @@ footer {
         margin-bottom: 30px;
         width: 100%;
     }   
+    .car-list .car-container{
+        width: 170px;
+        }
+    .list-container .car-list {
+        width: 100%;
+    }
+
+                    /* PRODUCT PHP END*/
+
+    /* input details PHP */
+    .book-details, .details-container {
+        margin-top: 30px;
+    }
+            
+    .book-details {
+        margin-bottom: 30px;
+    }
+    .book-details-container {
+        width: 100%;
+    }
+    .details-container {
+        height:100%;
+    }
+    /* input details PHP END */
+
+    /* SUBMIT PHP */
+    .container {
+        display: flex;
+        flex-direction: column;
+        color: #222831;
+    }
+
+    .submitted-info {
+        width: 100%;
+    }
+
+    .thumbnail {
+        width: 100%;
+    }/* SUBMIT PHP END */
+
+    /* MANAGE PHP*/
+    .manager-container form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .manager-container button.submit-btn {
+        width: 220px;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .booking-details {
+        width: 100%;
+    }
+
+    .car-img-container {
+        width: 100%;
+    }
+    .manager-container .search-form {
+        align-items: center;
+    }
+    
+    /* MANAGE PHP END*/
+
+
 }
 
 
@@ -754,7 +1382,10 @@ footer {
         margin: 5px 0;
     }
     /*END FOOTER*/
-
+    /*input details*/
+    .book-main-container {
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 1070px) 
@@ -783,15 +1414,21 @@ footer {
 
     .cover img {
         margin-top: 5vh;
-        height: 80%;
+        height: 65%;
     }
 
     .nav-active {
         transform: translateX(0%);
     }
+
+    /*product.php*/
+    .car-slideshow .slider img{
+        padding: 0;
+    }
 } 
 
 @media screen and (max-width: 1320px) {
+    /*CAR LISTING*/
     .car-list ul {
         margin-left: 0;
     }
@@ -799,4 +1436,13 @@ footer {
     .car-list .car-container {
         margin: 8px;
     }
+}
+
+/* DATEPICKER */
+.ui-datepicker select.ui-datepicker-month {
+    color: black;
+}
+
+.ui-datepicker select.ui-datepicker-month option{
+    color: black;
 }

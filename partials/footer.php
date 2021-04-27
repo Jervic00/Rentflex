@@ -1,15 +1,15 @@
 
+
 <footer>
         <div class="main-content">
             <div class="left box">
                 <h2>Rentflex</h2>
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Vitae sapien pellentesque habitant morbi tristique.
+                    <p>We want to make renting a car as simple and personal as driving your own. Check out our Social Media Pages.</p>
                     
                     <div class="social">
-                        <a href="#"><i class="fa fa-facebook-square"></i></a>
-                        <a href="#"><i class="fa fa-twitter-square"></i></a>
+                        <a href="https://www.facebook.com/rentflexuae/"><i class="fa fa-facebook-square"></i></a>
+                        <a href="https://twitter.com/hashtag/rentflex"><i class="fa fa-twitter-square"></i></a>
                         <a href="#"><i class="fa fa-instagram"></i></a>
                         <a href="#"><i class="fa fa-youtube-play"></i></a>
                     </div>
@@ -21,8 +21,8 @@
                 <h2>Address</h2>
                 <div class="content">
                     <div class="location">
-                        <a href="https://www.google.com/maps/search/1481+Kildeer+Drive+Chester+OH,+Ohio/@39.0875935,-81.931392,15z/data=!3m1!4b1"   ><i class="fa fa-map-marker"></i></a>
-                        <span class="text">1481  Kildeer Drive Chester OH, Ohio</span>
+                        <a href="https://www.google.com/maps/place/Quezon+City,+Metro+Manila/@14.6839253,120.9921496,12z/data=!3m1!4b1!4m5!3m4!1s0x3397ba0942ef7375:0x4a9a32d9fe083d40!8m2!3d14.6760413!4d121.0437003"   ><i class="fa fa-map-marker"></i></a>
+                        <span class="text"> Quezon City, Philippines</span>
                     </div>
                     
                     <div class="phone">
@@ -41,7 +41,7 @@
             <div class="right box">
                 <h2>Send Us a feedback</h2>
                 <div class="content">
-                    <form action="feed.php" method="post">
+                    <form action="partials/feed.php" method="post">
                         <div class="text">Email *</div>
                         <input type="email" name="eemail" required />
                         <div class="msg">
@@ -49,7 +49,7 @@
                             <textarea name="teext" rows="4" cols="25"></textarea>
                         </div>
                         <div class="button">
-                            <button type="submit" class="btn-send"  value="Insert" required>Send</button>
+                            <button type="submit" class="btn-send" required>Send</button>
                         </div>
                     </form>
 
@@ -62,5 +62,8 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+    crossorigin="anonymous"></script>
     <script src="javascript/JavaScript.js"></script>

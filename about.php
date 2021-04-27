@@ -11,16 +11,21 @@
         <section class="about">
             <div class="about-presentation">
                 <div class="about-title">
-                    <h1>What is Rentflex?</h1>
+                    <h1>Welcome to Rentflex</h1>
                 </div>
                 <div class="about-content">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula lorem vitae metus tempor euismod. Nam sollicitudin, justo id faucibus pharetra, purus tortor facilisis nibh, vitae posuere sapien magna a mauris. Nullam dapibus quis leo quis vestibulum. Nam et libero non turpis iaculis aliquam. Nullam feugiat vestibulum pharetra. Curabitur quis dignissim erat. Cras tortor urna, rutrum ac congue eget, pharetra sit amet mi.
-                        </p>
-                    <p>
-                        Sed ut tellus vitae odio bibendum dapibus vel ut magna. Praesent interdum purus sed posuere mollis. Morbi vel felis ullamcorper dui porta commodo ut suscipit ante. Aenean consequat quam eu velit dictum interdum. Quisque porta rutrum est vitae aliquam. Fusce risus ex, molestie id interdum sit amet, porta sit amet felis. Vivamus varius eget tellus ut fermentum. In ultrices cursus sapien ac sodales. Curabitur et porta sem. Praesent sodales ex mauris, et vehicula neque accumsan et. Donec id dapibus metus. Fusce iaculis est imperdiet congue blandit. Praesent eget enim vel nibh sagittis accumsan in nec magna. Nunc ut urna pellentesque, pulvinar diam quis, tristique libero.
-                    </p>
+                    <p>We want to make renting a car as simple and personal as driving your own.</p>
+                    <p>At Rentflex everything we do is about giving you the freedom to discover more. We’ll move mountains to find you the right rental car, and bring you a smooth, hassle-free experience from start to finish. Here you can find out more about how we work.</p>
+                    <p>Renting a car brings you freedom, and we’ll help you find the right car for you at a great price. But there’s much more to us than that. We're here to make renting a car a lot less hassle.</p>
+                    <p>Our customer team is here to support you through your trip, wherever and whenever you need extra help.</p>
+                    <p>In simple terms, because we bring you unbeatable value and peace of mind throughout your rental car journey.</p>
                 </div>
+            </div>
+            <div class="car-model">
+                <div class="mode-img-container">
+                    <img src="img/Rentflex-model.png" alt="model" >
+                </div>
+                
             </div>
         </section>
     </main>
