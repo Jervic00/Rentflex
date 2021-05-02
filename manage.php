@@ -342,7 +342,7 @@ if(isset($result))
                 <?php   } //penalties end
                     else{ //No penalties
                     ?>
-                            <tr?>
+                            <tr>
                                 <td>Total Price due(No penalty):</td> 
                                 <td>₱<?php 
                                 if($row['mode_of_payment'] == 'PDU')
@@ -362,7 +362,26 @@ if(isset($result))
                                 ?>
                                 
                                 </td>
-                            </tr?>    
+                            </tr>  
+
+                            <?php
+                        if($row['mode_of_payment'] == 'DIFFER')
+                        {
+                            $months_to_pay = $row['months_to_pay'];
+                            $book_date = strtotime($row['book_date']);
+                            $text_total_price = str_replace(",", "", $row['price_to_pay']);
+                            $monthly_payment = $text_total_price / $months_to_pay;
+                            
+                            for($i=1; $i<=$months_to_pay; $i++ )
+                            {?>
+                            <tr>
+                                <td><?php echo date("m/d/Y",strtotime("+". $i ."month",$book_date))?></td>
+                                <td><?php echo '₱' . number_format($monthly_payment, 2)?></td>
+                            </tr>
+                            <?php
+                            }
+                        }?>
+
                 <?php   } //No penalties  ?>        
                         </table>
                         <?php

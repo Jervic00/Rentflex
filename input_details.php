@@ -10,7 +10,7 @@ $row = mysqli_fetch_array($result);
 $pickup_loc = $_POST['pickup_loc'];
 $model = $row['model'];
 $price = number_format($row['price'], 2);
-
+$months_to_pay = 0;
 if(empty($_POST['chkbox']) && !empty($_POST['drop_loc']))
 {
     $drop_off = $_POST['drop_loc'];
@@ -31,8 +31,11 @@ else if ($_POST['payment_method'] == 'PDU')
 else if($_POST['payment_method'] == 'DIFFER')
 {
     $payment_method = 'Monthly Pay';
+    $months_to_pay = $_POST['months_to_pay'];
 }
 
+ 
+    
 function dateDiffInDays($pickup_date, $drop_date)  
 { 
     // Calculating the difference in timestamps 
@@ -56,6 +59,7 @@ if($daysBooked == 0)
 {
     $daysBooked++;
 }
+
 //total price plus Insurance Status
 $insured = "no";
 $total_price = $row['price'] * $daysBooked;
@@ -64,7 +68,23 @@ if(isset($_POST['insurance_chkbox']))
     $total_price += 3500;
     $insured = "YES";
 }
-$total_price = number_format($total_price, 2);
+
+if($months_to_pay<=3 && $_POST['payment_method'] == 'DIFFER')
+{
+    $total_price = number_format($total_price*1.05, 2);
+}
+else if(($months_to_pay > 3 && $months_to_pay <=6) && $_POST['payment_method'] == 'DIFFER')
+{
+    $total_price = number_format($total_price*1.1, 2);
+}
+else if(($months_to_pay>6 && $months_to_pay <=12) && $_POST['payment_method'] == 'DIFFER')
+{
+    $total_price = number_format($total_price*1.15,2);
+}
+else
+{
+    $total_price = number_format($total_price,2);
+}
 
 //Down Payment
 if($_POST['payment_method'] == 'CASH')
@@ -137,8 +157,12 @@ function BookCode() {
                                                                     {
                                                                         echo 'DIFFER';
                                                                     }
-
                                                                  ?>"/>
+            <?php
+            if($_POST['payment_method'] == 'DIFFER')            
+            {?>                                                                 
+            <input type="hidden" name="months_to_pay" value="<?php echo $months_to_pay ?>"/>
+      <?php }?>
                     <div class="name-container">
                         <div class="first-name">
                             <p>First Name:</p> 
@@ -278,6 +302,21 @@ function BookCode() {
                             <td>₱<?php echo $down_payment;?> </td>
                         </tr>
 
+                        <?php
+                        if($_POST['payment_method'] == 'DIFFER')
+                        {
+                            $book_date = strtotime('now');
+                            $text_total_price = str_replace(",", "", $total_price);
+                            $monthly_payment = $text_total_price / $months_to_pay;
+                            for($i=1; $i<=$months_to_pay; $i++ )
+                            {?>
+                            <tr>
+                                <td><?php echo date("m/d/Y",strtotime("+". $i ."month",$book_date))?></td>
+                                <td><?php echo '₱' . number_format($monthly_payment, 2)?></td>
+                            </tr>
+                            <?php
+                            }
+                        }?>
                         <!-- Supposedly Down Payment -->
 
 

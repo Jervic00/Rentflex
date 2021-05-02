@@ -755,6 +755,14 @@ input.book-btn:disabled{
 {
     font-size:14px;
 }
+
+.form-group form select option {
+    color: black;
+}
+.form-group form select
+{
+    color:black;
+}
 /* .chkBox input:checked + div{
     display: none !important;
 } */

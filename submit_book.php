@@ -13,10 +13,15 @@
     $contactNo = $_POST['contactNum'];
     $payment_method = $_POST['payment_method'];
     $insured = $_POST['insured'];
+    $months_to_pay = 0;
     if($payment_method == 'PDU' || $payment_method == 'DIFFER')
     {
     $price_paid = $price_to_pay*.3;
     $price_to_pay = $price_to_pay - $price_paid;
+    if($payment_method == 'DIFFER')
+    {
+        $months_to_pay += $_POST['months_to_pay'];
+    }
     }
     else if($payment_method == 'CASH')
     {
@@ -25,8 +30,8 @@
     }
 /* NEXT TASK : Deduct the Downpayment into the Total price/ price to pay */
 
-    $query = "INSERT INTO `booking`(`booking_id`, `firstName`, `lastName`, `contactNumber` , `email`, `car_id`, `pickup_date`, `dropoff_date`, `pickup_loc`, `drop_loc`, `price_paid` , `price_to_pay`, `mode_of_payment` , `insured`) 
-    VALUES ('$ref', '$fname', '$lname', '$contactNo', '$email', '$cid', '$pickup_date', '$drop_date', '$pickup_loc', '$drop_loc', '$price_paid' , '$price_to_pay', '$payment_method' , '$insured')";
+    $query = "INSERT INTO `booking`(`booking_id`, `firstName`, `lastName`, `contactNumber` , `email`, `car_id`, `pickup_date`, `dropoff_date`, `pickup_loc`, `drop_loc`, `price_paid` , `price_to_pay`, `mode_of_payment`, `months_to_pay` , `insured`) 
+    VALUES ('$ref', '$fname', '$lname', '$contactNo', '$email', '$cid', '$pickup_date', '$drop_date', '$pickup_loc', '$drop_loc', '$price_paid' , '$price_to_pay', '$payment_method', '$months_to_pay', '$insured')";
     
     if(!mysqli_query($conn, $query))
     {

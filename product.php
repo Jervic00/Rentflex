@@ -198,6 +198,22 @@ $status = $row['car_status'];
                                     <label for="female">Pay on day of usage(30% Down Payment)</label><br>
                                     <input type="radio" id="DIFFER" name="payment_method" value="DIFFER" disabled>
                                     <label for="female1">Monthly pay until pick up day<br>(30% Down Payment, 60days minimum)</label><br>
+                                    <!-- Months To Pay -->
+                                        <label for="cars" id="months_label" hidden>Choose months to pay:</label>
+                                            <select name="months_to_pay" id="select_months" hidden>
+                                                <option value='1' disabled>1 month</option>
+                                                <option value='2' disabled>2 months</option>
+                                                <option value='3' disabled>3 months</option>
+                                                <option value='4' disabled>4 months</option>
+                                                <option value='5' disabled>5 months</option>
+                                                <option value='6' disabled>6 months</option>
+                                                <option value='7' disabled>7 months</option>
+                                                <option value='8' disabled>8 months</option>
+                                                <option value='9' disabled>9 months</option>
+                                                <option value='10' disabled>10 months</option>
+                                                <option value='11' disabled>11 months</option>
+                                                <option value='12' disabled>12 months</option>
+                                            </select>
 
                                     <input type="submit" class="book-btn" name="book" value="Book Now" >
                             </form>

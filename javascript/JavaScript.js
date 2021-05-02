@@ -38,6 +38,8 @@ const navSlide = () => {
     });
 }); */
 
+
+
 $(".pickup-date").keydown(function(e){
     e.preventDefault();
 });
@@ -45,6 +47,110 @@ $(".drop-date").keydown(function(e){
     e.preventDefault();
 });
 
+
+/* CHANGE SELECT OPTIONS WHEN PICK-UP DATE IS CHANGED */
+$(function(){
+
+    $("#datetime").on('change', function() {
+        var start = $.datepicker.formatDate('mm/dd/yy', new Date());
+        var end = $('#datetime').val();
+
+        // end - start returns difference in milliseconds 
+        var diff = new Date(Date.parse(end) - Date.parse(start))
+
+        // get days
+        var days = diff / 86400000;
+        var months = days/30;  
+        months = Math.floor(months);
+
+
+        if($('#DIFFER').is(':checked'))
+     {
+        $('option').each(function(index) {
+            
+            $(this).prop("disabled", true);
+            if(index>=12)
+            {
+                return false;
+            }
+        })
+
+        $('#months_label').prop("hidden", false);
+        $('#select_months').prop("hidden", false);
+        $("option:selected").prop("selected", false);
+        $('option').each(function(index) {
+           
+           $(this).prop("disabled", false);
+           if(index >= months-1)
+           {
+               return false;
+           }
+       })
+     }
+     else
+     {
+        $('#months_label').prop("hidden", true);
+        $('#select_months').prop("hidden", true);
+        $("option:selected").prop("selected", false)
+
+        $('option').each(function(index) {
+            
+            $(this).prop("disabled", true);
+            if(index>=12)
+            {
+                return false;
+            }
+        })
+     }
+
+
+    })
+
+/* CHANGE SELECT OPTIONS WHEN PAYMENT METHOD IS CHANGED */
+ $('input[name="payment_method"]').on('change', function() {
+    var start = $.datepicker.formatDate('mm/dd/yy', new Date());
+    var end = $('#datetime').val();
+
+    // end - start returns difference in milliseconds 
+    var diff = new Date(Date.parse(end) - Date.parse(start))
+
+    // get days
+    var days = diff / 86400000;
+    var months = days/30;  
+    months = Math.floor(months);
+    
+    if($('#DIFFER').is(':checked'))
+     {
+         $('#months_label').prop("hidden", false);
+         $('#select_months').prop("hidden", false);
+         $('option').each(function(index) {
+            
+            $(this).prop("disabled", false);
+            if(index >= months-1)
+            {
+                return false;
+            }
+        })
+     }
+     else
+     {
+        $('#months_label').prop("hidden", true);
+        $('#select_months').prop("hidden", true);
+        $("option:selected").prop("selected", false)
+
+        $('option').each(function(index) {
+            
+            $(this).prop("disabled", true);
+            if(index>=12)
+            {
+                return false;
+            }
+        })
+     }
+
+
+ });
+});
 /* DATEPICKER BETA */
  $(function() {
     var dateFormat = "mm/dd/yy",
@@ -104,6 +210,8 @@ $(".drop-date").keydown(function(e){
       return date;
     }
 });
+
+
 /* DATEPICKER BETA */
 
 
