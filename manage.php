@@ -44,6 +44,7 @@ if(isset($_POST['cancel-btn']))
 //Unfinished
 if(isset($result))
 {
+    $price_paid = 0;
     $price_paid_DB = $row['price_paid'];
     $drop_off = strtotime($row['dropoff_date']);
     $pickup_date = strtotime($row['pickup_date']);
